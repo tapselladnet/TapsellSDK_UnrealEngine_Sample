@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Tapsell plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <init>
+    <log text="Tapsell init"/>
+    <setStringFromProperty result="app_ID" ini="Engine" section="Advertisement" property="TapsellAppID" default=""/>
+    <log text="Tapsell appId: $S(app_ID)"/>
+  </init>
+  <resourceCopies>
+    <copyFile src="$S(PluginDir)/libs/tapsell.jar" dst="$S(BuildDir)/libs/tapsell.jar"/>
+  </resourceCopies>
+
+  <androidManifestUpdates>
+    <addElements tag="application">
+		<activity android:name="ir.tapsell.sdk.TapsellAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    </addElements>
+  </androidManifestUpdates>
+
+  <proguardAdditions>
+    <insert>
+-keepattributes Signature
+-keepattributes *Annotation*
+-keepattributes EnclosingMethod
+-keep class sun.misc.Unsafe { *; }
+-keep class ir.tapsell.sdk.gson.stream.** { *; }
+-keep class ir.tapsell.sdk.gson.** { *; }
+-keepclassmembers enum * { *; }
+-keep class **.R$* { *; }
+-keep interface ir.tapsell.sdk.NoProguard
+-keep class * implements ir.tapsell.sdk.NoProguard { *; }
+-keep interface * extends ir.tapsell.sdk.NoProguard { *; }
+    </insert>   
+  </proguardAdditions>
+  
+  <gameActivityImportAdditions>
+		<insert>
+			import ir.tapsell.sdk.*;
+			import android.widget.Toast;
+			import android.os.Vibrator;
+		</insert>
+	</gameActivityImportAdditions>
+  
+  <gameActivityOnCreateAdditions>
+    <log text="Tapsell, java OnCreate. app_ID: $S(app_ID)"/>
+    <insert>TapsellUnrealEngine.initialize(this, </insert>
+	<insertValue value="&quot;$S(app_ID)&quot;"/>
+	<insert>);</insert>
+	<insertValue value="&#xD;"/>
+	<insert>TapsellUnrealEngine.setRewardListener(new TapsellRewardListener() {</insert>
+	<insertValue value="&#xD;"/>
+	<insert>@Override</insert>
+	<insertValue value="&#xD;"/>
+	<insert>	public void onAdShowFinished(TapsellAd ad, boolean completed) {</insert>
+	<insertValue value="&#xD;"/>
+	<insert>tapsellOnAdShowFinished(ad.getId(), ad.getZoneId(), completed, ad.isRewardedAd());</insert>
+	<insertValue value="&#xD;"/>
+	<insert>}</insert>
+	<insertValue value="&#xD;"/>
+	<insert>});</insert>
+	<insertValue value="&#xD;"/>
+	
+  </gameActivityOnCreateAdditions>
+  
+	<gameActivityClassAdditions>
+		<insert>
+		
+			//Call c++ func from java
+			public native void tapsellRequestAdOnError(String error, String zone_id);
+			public native void tapsellRequestAdOnAdAvailable(String ad_id , String zone_id);
+			public native void tapsellRequestAdOnNoAdAvailable(String zone_id);
+			public native void tapsellRequestAdOnNoNetwork(String zone_id);
+			public native void tapsellRequestAdOnExpiring(String ad_id , String zone_id);
+			
+			public native void tapsellShowAdOnOpened(String ad_id , String zone_id);
+			public native void tapsellShowAdOnClosed(String ad_id , String zone_id);
+			
+			public native void tapsellOnAdShowFinished(String ad_id , String zone_id , boolean compeleted, boolean rewarded);
+			
+			//Call java func from c++
+			public void AndroidThunkJava_TapsellRequestAd(final String zoneId, boolean isCached){
+				//Toast.makeText(GameActivity.this, "AndroidThunkJava_TapsellRequestAd called", Toast.LENGTH_SHORT).show();
+				//Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                //v.vibrate(500);
+				
+				TapsellAdRequestOptions options = new TapsellAdRequestOptions();
+				options.setCacheType(isCached?1:2);
+			
+				TapsellUnrealEngine.requestAd(GameActivity.this.getApplicationContext(), zoneId, options, new TapsellAdRequestListener() {
+					@Override
+					public void onError (String error){
+						tapsellRequestAdOnError(error, zoneId);
+					}
+	
+					@Override
+					public void onAdAvailable (TapsellAd ad){
+						tapsellRequestAdOnAdAvailable(ad.getId(),zoneId);
+					}
+				
+					@Override
+					public void onNoAdAvailable (){
+						tapsellRequestAdOnNoAdAvailable(zoneId);
+					}
+				
+					@Override
+					public void onNoNetwork (){
+						tapsellRequestAdOnNoNetwork(zoneId);
+					}
+				
+					@Override
+					public void onExpiring (TapsellAd ad){
+						tapsellRequestAdOnExpiring(ad.getId(), zoneId);
+					}
+				});
+			}
+			
+			public void AndroidThunkJava_TapsellShowAd(final String adId, final String zoneId, boolean backDisabled, boolean immersiveMode, int rotationMode, boolean showDialog){
+				//Toast.makeText(GameActivity.this, "AndroidThunkJava_TapsellRequestAd called", Toast.LENGTH_SHORT).show();
+				Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(1000);
+			
+				TapsellUnrealEngine.showAd(GameActivity.this, adId, backDisabled, immersiveMode, rotationMode, showDialog, new TapsellAdShowListener() {
+					@Override
+					public void onOpened (TapsellAd ad){
+						tapsellShowAdOnOpened(adId , zoneId);
+					}
+					@Override
+					public void onClosed (TapsellAd ad){
+						tapsellShowAdOnClosed(adId , zoneId);
+					}
+				});
+			}
+			
+			public String AndroidThunkJava_TapsellGetVersion(){	
+				return TapsellUnrealEngine.getVersion();
+			}
+			
+			public void AndroidThunkJava_TapsellSetMaxAllowedBandwidthUsagePercentage(int maxPercentage){	
+				TapsellUnrealEngine.setMaxAllowedBandwidthUsagePercentage(GameActivity.this, maxPercentage);
+			}
+			
+			public void AndroidThunkJava_TapsellSetMaxAllowedBandwidthUsage(int maxBpsSpeed){	
+				TapsellUnrealEngine.setMaxAllowedBandwidthUsage(GameActivity.this, maxBpsSpeed);
+			}
+			
+			public void AndroidThunkJava_TapsellClearBandwidthUsageConstrains(){	
+				TapsellUnrealEngine.clearBandwidthUsageConstrains(GameActivity.this);
+			}
+			
+			public void AndroidThunkJava_TapsellSetPermissionHandlerMode(int permissionHandlerConfig){
+				TapsellUnrealEngine.setPermissionHandlerMode(GameActivity.this, permissionHandlerConfig);
+			}
+			
+			public void AndroidThunkJava_TapsellSetDebugMode(boolean debug){
+				TapsellUnrealEngine.setDebugMode(GameActivity.this, debug);
+			}
+			
+			public void AndroidThunkJava_TapsellRequestBannerAd(String zoneId, int bannerType, int horizontalGravity, int verticalGravity){
+				TapsellUnrealEngine.requestBannerAd(GameActivity.this, zoneId, bannerType, horizontalGravity, verticalGravity);
+			}
+			
+		</insert>
+	</gameActivityClassAdditions>
+</root>
