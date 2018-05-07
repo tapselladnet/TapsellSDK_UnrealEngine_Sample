@@ -1,4 +1,4 @@
-<div dir="rtl" align="right">
+<div dir="rtl">
 <a href="#part1">تنظیمات اولیه پروژه Unreal Engine (اندروید)</a></br>
   <a href="#part2">پیاده‌سازی تبلیغات ویدئویی (Interstitial/Rewarded Video) و بنری تمام صفحه (Interstitial Banner) در پروژه Unreal Engine (اندروید)</a></br>
   <a href="#part3">پیاده سازی تبلیغات بنری استاندارد در پروژه Unreal Engine (اندروید)</a></br>
@@ -6,7 +6,7 @@
 </div>
 </br></br>
 
-<div dir="rtl" align="right" id="part1">
+<div dir="rtl" id="part1">
   <h1>تنظیمات اولیه پروژه Unreal Engine (اندروید)</h>
   <h3>گام ۱: دریافت SDK تپسل</h3>
 ابتدا فایل zip مربوط به SDK تپسل را از آدرس زیر دانلود کرده و در پوشه Plugins موجود در روت پروژه خود Extract کنید. اگر این پوشه وجود نداشت آنرا ایجاد کنید.
@@ -40,7 +40,7 @@ Edit -&gt; Plugins -&gt; Project -&gt; Advertising پلاگین تپسل را En
 
 </div>
 
-<div dir="rtl" align="right" id="part2">
+<div dir="rtl" id="part2">
   <h1>
   پیاده‌سازی تبلیغات ویدئویی (Interstitial/Rewarded Video) و بنری تمام صفحه (Interstitial Banner) در پروژه Unreal Engine (اندروید)
   </h1>
@@ -156,12 +156,12 @@ LOCKED REVERSED LANDSCAPE</div></td>
 <div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 598px; top: 6047px; opacity: 0.35;"></div></div>
   
   
-<div dir="rtl" align="right" id="part3">
+<div dir="rtl" id="part3">
   
   </div>
   
   
-<div dir="rtl" align="right" id="part4">
+<div dir="rtl" id="part4">
   
   </div>
 
