@@ -157,11 +157,78 @@ LOCKED REVERSED LANDSCAPE</div></td>
   
   
 <div dir="rtl" id="part3">
-  
+  <h1>
+    پیاده‌سازی تبلیغات بنری استاندارد در پروژه Unreal Engine (اندروید)
+    </h1>
+    <h3>گام 1: دریافت تبلیغ</h3>
+جهت نمایش بنر استاندارد، باید محلی برای نمایش آن در صفحه در نظر بگیرید. بنر استاندارد، دارای سایزهای استانداردی است که در SDK تپسل مشخص شده اند. جهت نمایش بنر، از تابع زیر استفاده کنید:
+
+<img class="size-full wp-image-2289 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/11.jpg" alt="" width="312" height="316" />
+
+مقدار zoneId کلیدی ست که بعد از ساخت اپلیکیشن در پنل و ثبت یک zone از نوع بنری استاندارد دریافت میکنید. ورودی Banner Type اندازه های مختلف را بیان میکند. ورودی Horizontal Gravity نشان میدهد که آیا تبلیغ، بالا یا پایین صفحه باشد، همچنین Vertical Gravity بیان میکند که تبلیغ از جهت عرضی در کجای صفحه باشد.
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 243px; top: 1799px;"></div>
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 836px; top: 338px;"></div>
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 964px; top: 586px; opacity: 0.4;">
+<div id="s3gt_translate_tooltip_mini_logo" class="s3gt_translate_tooltip_mini" title="Translate selected text"></div>
+<div id="s3gt_translate_tooltip_mini_sound" class="s3gt_translate_tooltip_mini" title="Play"></div>
+<div id="s3gt_translate_tooltip_mini_copy" class="s3gt_translate_tooltip_mini" title="Copy text to Clipboard"></div>
+</div>
   </div>
   
   
 <div dir="rtl" id="part4">
-  
+  <h1>
+    موارد پیشرفته‌تر در SDK
+    </h1>
+  <h3>دریافت نسخه SDK تپسل</h3>
+درصورتی که نیازمند به دانستن نسخه تپسل پیاده‌سازی شده در اپلیکیشن خود هستید، می‌توانید با فراخوانی تابع زیر عنوان نسخه را دریافت نمایید:
+
+<img class="size-full wp-image-2292 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/12.jpg" alt="" width="253" height="145" />
+<h3>تنظیمات کشینگ (اندروید)</h3>
+همانطور که گفته شد، از نسخه ۳ به بعد تپسل قابلیت نمایش ویدئو بصورت استریم و همینطور نمایش ویدئو بعد از دانلود فایل (کشینگ) را دارد. با این قابلیت، قبل از نمایش تبلیغ و در هنگامی که کاربر مشغول استفاده از اپلیکیشن است، ویدئو بطور کامل دریافت می‌شود و کاربر بدون هیچگونه مکثی می‌تواند ویدئو را تماشا کند.
+
+از طرف دیگر، در اپلیکیشن‌ها و بازی‌های آنلاین، دریافت ویدئو در پس زمینه ممکن است در روند اصلی برنامه خلل ایجاد کند و آن را کند نماید.
+
+جهت جلوگیری از اشغال پهنای باند زیاد توسط تپسل، شما می‌توانید درصد مشخصی از کل پهنای باند موجود را به دانلود ویدئو اختصاص دهید. جهت انجام این عمل، تابع زیر را در آغاز برنامه (قبل از درخواست تبلیغ) فراخوانی کنید:
+
+<img class="size-full wp-image-2293 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/13.jpg" alt="" width="476" height="190" />
+
+در این تابع، ورودی <code>Max Percentage</code> حداکثر درصدی از پهنای باند در دسترس اپلیکیشن است که SDK تپسل از آن برای دریافت ویدئو استفاده می‌کند.
+
+همچنین درصورتی که از سرعت دانلود واقعی کاربر در اپلیکیشن خود اطلاع دارید می‌توانید به کمک تابع زیر، مقدار حداکثر پهنای باند قابل استفاده برای دانلود ویدئو را به کمک تابع زیر تنظیم کنید.
+
+<img class="size-full wp-image-2294 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/14.jpg" alt="" width="348" height="134" />
+
+ورودی این تابع، میزان حداکثر سرعت دانلود ویدئو است که باید به واحد بایت بر ثانیه داده شود.
+
+در صورتی که در بخشی از اپلیکیشن خود می‌خواهید تنظیمات مربوط به محدودیت سرعت دانلود را غیرفعال نمایید، از تابع زیر استفاده کنید:
+
+<img class="size-full wp-image-2295 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/15.jpg" alt="" width="374" height="122" />
+
+توضیحات بیشتر درباره کشینگ و استریمینگ در SDK تپسل را <a href="https://answers.tapsell.ir/?ht_kb=cached-vs-streamed">اینجا</a> بخوانید.
+
+&nbsp;
+<h3>تنظیمات دسترسی‌های زمان اجرا (Run Time Permissions)</h3>
+از نسخه اندروید 6 و بالاتر، برخی دسترسی‌ها در اندروید در زمان اجرا باید از کاربر درخواست شوند. یکی از این دسترسی‌ها، دسترسی <code>READ_PHONE_STATE</code> است که توسط تپسل استفاده می‌شود و بدون این دسترسی، SDK تپسل قابل استفاده نیست. برای سهولت در پیاده‌سازی، SDK تپسل دو مود درخواست دسترسی ارائه نموده است. برای تنظیم نحوه درخواست دسترسی، از تابع زیر استفاده کنید.
+
+<img class="size-full wp-image-2296 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/16.jpg" alt="" width="312" height="133" />
+
+در حالت <code>AUTO</code> زمان درخواست تبلیغ درصورت عدم وجود دسترسی مورد نیاز، دیالوگ دریافت دسترسی به کاربر نمایش داده می‌شود. اگر کاربر دسترسی را به اپلیکیشن بدهد تبلیغ دریافت می‌شود و در صورت رد کردن تبلیغ دریافت نمی‌شود. در این حالت اگر کاربر گزینه <code>Don't show again</code> را انتخاب کند دیگر دیالوگ دریافت دسترسی به وی نشان داده نمی‌شود. در حالت <code>AUTO INSIST</code> حتی اگر کاربر گزینه <code>Don't show again</code> را نیز انتخاب کند باز یک دیالوگ به کاربر نمایش داده می‌شود که وی را به صفحه تنظیمات اپ برای تغییر دسترسی مورد نیاز می‌برد.
+<h3>حالت دیباگ (Debug Mode)</h3>
+در هنگام پیاده‌سازی SDK، ممکن است بدلیل عدم رعایت نکات گفته شده و یا خطاهای دیگر، تبلیغات قابل دریافت و نمایش نباشند. حالت دیباگ جهت تسهیل فرآیند عیب‌یابی در هنگام پیاده‌سازی تعبیه شده است. با فعالسازی این حالت، می‌توانید گزارش‌های لاگ نمایش داده شده توسط SDK را در logcat مشاهده کنید. برای فعالسازی حالت دیباگ کافیست از تابع زیر در آغاز برنامه استفاده کنید:
+
+<img class="size-full wp-image-2297 aligncenter" src="https://answers.tapsell.ir/wp-content/uploads/2017/12/17.jpg" alt="" width="248" height="120" />
+
+سپس با استفاده از نرم‌افزار Android Studio، از بخش Android Monitor، قسمت logcat را باز کرده و لاگ‌های نوشته شده را بررسی کنید. برای مشاهده لاگ‌های برنامه unity، در بخش فیلتر کلمه unity را وارد کنید.
+<p style="text-align: center;"><img src="https://answers.tapsell.ir/wp-content/uploads/2017/02/logs-unity.png" /></p>
+&nbsp;
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 757px; top: 557px;"></div>
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 968px; top: 1905px;"></div>
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 968px; top: 2597px; opacity: 0.25;"></div>
+<div id="s3gt_translate_tooltip_mini" class="s3gt_translate_tooltip_mini_box" style="background: initial !important; border: initial !important; border-radius: initial !important; border-spacing: initial !important; border-collapse: initial !important; direction: ltr !important; flex-direction: initial !important; font-weight: initial !important; height: initial !important; letter-spacing: initial !important; min-width: initial !important; max-width: initial !important; min-height: initial !important; max-height: initial !important; margin: auto !important; outline: initial !important; padding: initial !important; position: absolute; table-layout: initial !important; text-align: initial !important; text-shadow: initial !important; width: initial !important; word-break: initial !important; word-spacing: initial !important; overflow-wrap: initial !important; box-sizing: initial !important; display: initial !important; color: inherit !important; font-size: 13px !important; font-family: X-LocaleSpecific, sans-serif, Tahoma, Helvetica !important; line-height: 13px !important; vertical-align: top !important; white-space: inherit !important; left: 543px; top: 2585px; opacity: 0.65;">
+<div id="s3gt_translate_tooltip_mini_logo" class="s3gt_translate_tooltip_mini" title="Translate selected text"></div>
+<div id="s3gt_translate_tooltip_mini_sound" class="s3gt_translate_tooltip_mini" title="Play"></div>
+<div id="s3gt_translate_tooltip_mini_copy" class="s3gt_translate_tooltip_mini" title="Copy text to Clipboard"></div>
+</div>
   </div>
 
