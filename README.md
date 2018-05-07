@@ -19,7 +19,7 @@
 
 <h3>گام ۳:تنظیمات اولیه Sdk</h3>
 از منو Edit -&gt; Project Settings -&gt; Platforms -&gt; Android ، دسترسی های زیر را به پروژه اندروید خود اضافه کنید. افزودن مواردی که optional (اختیاری) هستند باعث افزایش کیفیت و بهینه بودن تبلیغات می شود که میتواند بعدا در میزان درآمد شما نیز تاثیر داشته باشند.
-<pre direction="ltr"><span style="color: #000080;">android.permission.ACCESS_NETWORK_STATE
+<pre dir="ltr"><span style="color: #000080;">android.permission.ACCESS_NETWORK_STATE
 android.permission.INTERNET
 android.permission.READ_PHONE_STATE   (optional)
 android.permission.VIBRATE   (optional)
