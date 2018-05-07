@@ -28,7 +28,7 @@ android.permission.ACCESS_COARSE_LOCATION   (optional)
 &nbsp;
 <h3>گام ۴: شروع کار با SDK تپسل</h3>
 خطوط زیر را به انتهای فایل DefaultEngine.ini موجود در فولدر Config پروژه خود اضافه کنید:
-<pre style="direction: ltr;">[Advertisement]
+<pre dir="ltr">[Advertisement]
 TapsellAppID=appKey</pre>
 ورودی appKey کلید تپسلی است که در گام قبل از پنل تپسل دریافت کردید. حال از منوی
 
@@ -82,23 +82,23 @@ Edit -&gt; Plugins -&gt; Project -&gt; Advertising پلاگین تپسل را En
 <th width="60%">توضیحات (زمان اجرا)</th>
 </tr>
 <tr style="background-color: #fefefe;">
-<td style="direction: ltr;" width="40%">onErrorAction</td>
+<td dir="ltr" width="40%">onErrorAction</td>
 <td>هنگامی که هر نوع خطایی در پروسه‌ی دریافت تبلیغ بوجود بیاید</td>
 </tr>
 <tr style="background-color: #f2f2f2;">
-<td style="direction: ltr;" width="40%">onAdAvailableAction</td>
+<td dir="ltr" width="40%">onAdAvailableAction</td>
 <td width="60%">زمانی که تبلیغ دریافت شده و آماده‌ی نمایش باشد.</td>
 </tr>
 <tr style="background-color: #fefefe;">
-<td style="direction: ltr;" width="40%">onNoAdAvailableAction</td>
+<td dir="ltr" width="40%">onNoAdAvailableAction</td>
 <td width="60%">در صورتی که تبلیغی برای نمایش وجود نداشته باشد.</td>
 </tr>
 <tr style="background-color: #f2f2f2;">
-<td style="direction: ltr;" width="40%">onNoNetworkAction</td>
+<td dir="ltr" width="40%">onNoNetworkAction</td>
 <td width="60%">زمانی که دسترسی به شبکه موجود نباشد.</td>
 </tr>
 <tr style="background-color: #fefefe;">
-<td style="direction: ltr;" width="40%">onExpiring</td>
+<td dir="ltr" width="40%">onExpiring</td>
 <td width="60%">زمانی که تبلیغ منقضی شود. هر تبلیغ مدت زمان مشخصی معتبر است و در صورتی که تا قبل از آن نمایش داده نشود منقضی شده و دیگر قابل نمایش نخواهد بود.</td>
 </tr>
 </tbody>
@@ -119,17 +119,17 @@ Edit -&gt; Plugins -&gt; Project -&gt; Advertising پلاگین تپسل را En
 <th width="60%">توضیحات</th>
 </tr>
 <tr style="background-color: #fefefe;">
-<td style="direction: ltr;" width="40%">Back Disabled</td>
+<td dir="ltr" width="40%">Back Disabled</td>
 <td width="60%">
 <div align="right">در هنگام پخش تبلیغ دکمه‌ی بازگشت گوشی فعال باشد یا خیر</div></td>
 </tr>
 <tr style="background-color: #f2f2f2;">
-<td style="direction: ltr;" width="40%">Immmersive Mode</td>
+<td dir="ltr" width="40%">Immmersive Mode</td>
 <td width="60%">
 <div align="right">فعال‌سازی حالت Immersive در هنگام پخش تبلیغ (فقط در اندروید)</div></td>
 </tr>
 <tr style="background-color: #fefefe;">
-<td style="direction: ltr;" width="40%">Rotation Mode</td>
+<td dir="ltr" width="40%">Rotation Mode</td>
 <td width="60%">
 <div align="right">تعیین وضعیت گوشی در هنگام پخش تبلیغ به یکی از سه حالت:</div>
 <div align="left">LOCKED PORTRAIT
@@ -139,7 +139,7 @@ LOCKED REVERSED PORTRAIT
 LOCKED REVERSED LANDSCAPE</div></td>
 </tr>
 <tr style="background-color: #f2f2f2;">
-<td style="direction: ltr;" width="40%">Show Dialog</td>
+<td dir="ltr" width="40%">Show Dialog</td>
 <td width="60%">
 <div align="right">نمایش دیالوگ اخطار در هنگام بازگشت از تبلیغات جایزه‌دار</div></td>
 </tr>
