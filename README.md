@@ -10,7 +10,7 @@
   <h1>تنظیمات اولیه پروژه Unreal Engine (اندروید)</h>
   <h3>گام ۱: دریافت SDK تپسل</h3>
 ابتدا فایل zip مربوط به SDK تپسل را از آدرس زیر دانلود کرده و در پوشه Plugins موجود در روت پروژه خود Extract کنید. اگر این پوشه وجود نداشت آنرا ایجاد کنید.
-<p style="text-align: center;"><a href="https://storage.backtory.com/tapsell-server/sdk/tapsell-unrealengine-1.1.0.zip"><button>دریافت فایل</button></a></p>
+<p style="text-align: center;"><a href="https://storage.backtory.com/tapsell-server/sdk/LatestVersions/UnrealEngineTapsellSdk.zip"><button>دریافت فایل</button></a></p>
 <p style="text-align: right;">سپس برنامه را یک بار ریستارت کنید.</p>
 
 <h3>گام ۲: دریافت کلید تپسل</h3>
